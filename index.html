@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">Weather App</div>
+            <nav>
+                <a href="#" id="dashboard-link" class="active-link">Dashboard</a>
+                <a href="#" id="tables-link">Tables</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- User Profile -->
+            <div class="user-profile">
+                <img src="profile.jpg" alt="User Profile Picture">
+                <div class="user-info">
+                    <p class="user-name">Muhammad Taha</p>
+                    <p class="user-email">mtaha2004.22.2@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section">
+                <div class="weather-widget">
+                    <input type="text" id="cityInput" placeholder="Enter city name">
+                    <button id="getWeather">Get Weather</button>
+
+                    <div class="weather-info">
+                        <h2 id="cityName"></h2>
+                        <p id="weatherDescription"></p>
+                        <img id="weatherIcon" alt="Weather Icon">
+                        <p id="temperature"></p>
+                        <p id="humidity"></p>
+                        <p id="windSpeed"></p>
+                    </div>
+                </div>
+
+                <div class="charts">
+                    <canvas id="tempBarChart" width="300" height="150"></canvas>
+                    <canvas id="weatherDoughnutChart" width="300" height="150"></canvas>
+                    <canvas id="tempLineChart" width="300" height="150"></canvas>
+                </div>
+
+                <div class="chatbot">
+                    <h3>Ask the Chatbot</h3>
+                    <input type="text" id="userInput" placeholder="Ask a weather-related question...">
+                    <button id="sendBtn">Send</button>
+                    <p id="botReply"></p>
+                </div>
+            </section>
+
+            <!-- Tables Section -->
+            <section id="tables" class="content-section hidden">
+                <h3>5-Day Forecast Table</h3>
+                <table id="forecastTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Temperature</th>
+                            <th>Weather</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <h3>Past Week Weather Data</h3>
+                <table id="pastWeekTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Temperature</th>
+                            <th>Weather</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
